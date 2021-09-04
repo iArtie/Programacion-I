@@ -1,0 +1,6 @@
+E:\Desktop\Sandiauwu\Producto\bin\Debug\netstandard2.0\Producto.deps.json
+E:\Desktop\Sandiauwu\Producto\bin\Debug\netstandard2.0\Producto.dll
+E:\Desktop\Sandiauwu\Producto\obj\Debug\netstandard2.0\Producto.csprojAssemblyReference.cache
+E:\Desktop\Sandiauwu\Producto\obj\Debug\netstandard2.0\Producto.csproj.CoreCompileInputs.cache
+E:\Desktop\Sandiauwu\Producto\obj\Debug\netstandard2.0\Producto.AssemblyInfoInputs.cache
+E:\Desktop\Sandiauwu\Producto\obj\Debug\netstandard2.0\Producto.AssemblyInfo.cs
