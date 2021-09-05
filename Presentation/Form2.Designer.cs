@@ -37,8 +37,8 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtExpire = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.cmbBusqueda = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,8 +115,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtExpire);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtPrecio);
+            this.groupBox1.Controls.Add(this.txtQuantity);
             this.groupBox1.Controls.Add(this.txtDesc);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.txtID);
@@ -133,19 +134,19 @@
             this.txtExpire.Size = new System.Drawing.Size(218, 20);
             this.txtExpire.TabIndex = 14;
             // 
-            // textBox4
+            // txtPrecio
             // 
-            this.textBox4.Location = new System.Drawing.Point(50, 214);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(218, 20);
-            this.textBox4.TabIndex = 13;
+            this.txtPrecio.Location = new System.Drawing.Point(50, 214);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(218, 20);
+            this.txtPrecio.TabIndex = 13;
             // 
-            // textBox3
+            // txtQuantity
             // 
-            this.textBox3.Location = new System.Drawing.Point(50, 162);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(218, 20);
-            this.textBox3.TabIndex = 12;
+            this.txtQuantity.Location = new System.Drawing.Point(50, 162);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(218, 20);
+            this.txtQuantity.TabIndex = 12;
             // 
             // txtDesc
             // 
@@ -206,12 +207,24 @@
             this.button2.TabIndex = 19;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(517, 386);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(102, 34);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Convertir a Json";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 451);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cmbBusqueda);
@@ -245,8 +258,8 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtExpire;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button button1;
@@ -254,5 +267,6 @@
         private System.Windows.Forms.ComboBox cmbBusqueda;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

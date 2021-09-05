@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Presentation
 {
     public partial class Form2 : Form
     {
+        public ProducotModel owo;
         public Form2()
         {
             InitializeComponent();
@@ -36,12 +38,24 @@ namespace Presentation
         {
 
         }
+        private void ClearTextBoxes()
+        {
 
+            txtName.Text = string.Empty;
+            txtDesc.Text = string.Empty;
+            txtQuantity.Text = string.Empty;
+            txtPrecio.Text = string.Empty;
+            txtExpire.Text = string.Empty;
+        }
         private void Button1_Click(object sender, EventArgs e)
         {
             string name, Description;
 
             name = txtName.Text;
+            Description = txtDesc.Text;
+            int quantity;
+            decimal price;
+            DateTime x;
             if (name == "")
             {
                 MessageBox.Show("Debe llenar la caja de texto con el nombre.",
@@ -78,45 +92,60 @@ namespace Presentation
                 MessageBox.Show($"Error, la descrpcion:{txtDesc.Text} no tiene el formato correcto.",
                       "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            Producto prow = new Producto()
+            {
+                Id = ++count,
+                Name = Name,
+                Description = Description,
+                Quantity = quantity,
+                Price = price,
+                CaducityDate = x,
+                cmbBusqueda = (cmbBusqueda)Enum.GetValues(typeof(cmbBusqueda))
+.GetValue(cmbBusqueda.SelectedIndex)
+            };
 
+            owo.Add(prow);
+            MessageBox.Show($@"             ID: {prow.Id}
+            Name: {prow.Name}
+            Description: {prow.Description}
+            Quantity: {prow.Quantity}
+            Price: {prow.Price}
+            CaducityTime: {prow.CaducityDate}
+            Measurement: {prow.MeasuUnit}");
+
+            ClearTextBoxes();
         }
 
-
-        private void TxtExpire_KeyDown(object sender, KeyEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            int cd, i;
-
-            if (Keys.Enter == e.KeyCode)
+            cmbBusqueda x;
+            if ((cmbBusqueda == null))
             {
-        
-                if (!int.TryParse(txtExpire.Text, out cd))
-                {
-                    MessageBox.Show("Error, no puede ser letras");
-                }
-                else
-                {
-                    if (cd < 0)
-                    {
-                        MessageBox.Show("No puede ser menor que cero");
-                        return;
-                    }
-                    cd = int.Parse(txtExpire.Text);
-
-                    if (i > 5)
-                    {
-                        MessageBox.Show("Solo se puede meter 6 notas");
-                        return;
-
-                    }
-                    cd[i] = cd;
-
-                    i++;
-
-                    label5.Text = $"Fecha: {i}";
-
-                    txtExpire = string.Empty;
-                }
+                MessageBox.Show($"Error, llene todos los espacios.",
+                              "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            else
+            {
+                x = (cmbBusqueda)Enum.GetValues(typeof(cmbBusqueda))
+                    .GetValue(cmbBusqueda.SelectedIndex);
+            }
+            string f = owo.GetProductoByUnidadMedida(x);
+            this.richTextBox1.Text = f;
+
+        }
+        public Producto[] OrdenarByPrecio()
+        {
+            Array.Sort(productos, new Producto.ProductPriceComparer());
+
+            return productos;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(owo.ConvertirProductoAJson());
         }
     }
+
+    //Se hizo lo que se pudo profe, aun asi tiene sus errores ahi, pero lo intentamos ?)
 }

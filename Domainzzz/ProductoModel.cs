@@ -85,5 +85,70 @@ namespace Domainzzz
             }
             return index
         }
+
+        public string GetList()
+        {
+            string result = " ";
+            foreach (Producto m in productos)
+            {
+                result += m.Id.ToString() + " " + m.Name.ToString() + " " + m.Quantity.ToString() + " " + m.Price.ToString();
+            }
+            return result;
+        }
+
+        public string GetProductoPorUnidadMedida(cmbBusqueda unidad)
+        {
+            string result = " "; int x = 1;
+            if (productos == null)
+            {
+                throw new ArgumentException($"Error, no ha ingresado ningun producto.");
+            }
+
+            for (int i = 0; i < productos.Length; i++)
+            {
+                if (productos[i].MeasuUnit == unidad)
+                {
+                    result += x + ". Codigo: " + productos[i].Id.ToString() + " Nombre: " + productos[i].Name.ToString() +
+                               " Cantidad: " + productos[i].Quantity.ToString() + " Precio: " + productos[i].Price.ToString() +
+                               " Caducidad " + productos[i].CaducityDate.ToString() + " Unidad de Medida: " + productos[i].MeasuUnit.ToString() + "\n";
+                    x++;
+                }
+            }
+        }
+
+        public string GetProductPorCaducidad(DateTime caducity)
+        {
+            string result = " "; int x = 1;
+            if (productos == null)
+            {
+                throw new ArgumentException($"Error, no ha ingresado ningun producto.");
+            }
+
+            foreach (Product m in productos)
+            {
+                if (m.CaducityDate == caducity)
+                {
+                    result += x + ". Codigo: " + m.Id.ToString() + " Nombre: " + m.Name.ToString() +
+                               " Cantidad: " + m.Quantity.ToString() + " Precio: " + m.Price.ToString() +
+                               " Caducidad " + m.CaducityDate.ToString() + " Unidad de Medida: " + m.MeasuUnit.ToString() + "\n";
+                    x++;
+                }
+            }
+
+            return result;
+        }
+
+        public string ConvertirProductoAJson()
+        {
+            if (productos == null)
+            {
+                throw new ArgumentException($"Error, no ha ingresado ningun producto.");
+            }
+            string ObjectJson = "";
+            foreach (Product f in productos)
+            {
+                ObjectJson += JsonConvert.SerializeObject(f);
+            }
+            return ObjectJson;
+        }
     }
-}
