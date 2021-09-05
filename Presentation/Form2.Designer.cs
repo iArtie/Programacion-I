@@ -34,9 +34,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtExpire = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
@@ -104,21 +104,21 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Fecha de caducidad";
             // 
-            // txtSalario
+            // txtID
             // 
-            this.txtSalario.Location = new System.Drawing.Point(50, 27);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(218, 20);
-            this.txtSalario.TabIndex = 9;
+            this.txtID.Location = new System.Drawing.Point(50, 27);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(218, 20);
+            this.txtID.TabIndex = 9;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtExpire);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.txtDesc);
             this.groupBox1.Controls.Add(this.txtName);
-            this.groupBox1.Controls.Add(this.txtSalario);
+            this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Location = new System.Drawing.Point(225, 61);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(310, 304);
@@ -126,12 +126,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
-            // textBox5
+            // txtExpire
             // 
-            this.textBox5.Location = new System.Drawing.Point(50, 261);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(218, 20);
-            this.textBox5.TabIndex = 14;
+            this.txtExpire.Location = new System.Drawing.Point(50, 261);
+            this.txtExpire.Name = "txtExpire";
+            this.txtExpire.Size = new System.Drawing.Size(218, 20);
+            this.txtExpire.TabIndex = 14;
             // 
             // textBox4
             // 
@@ -164,7 +164,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(647, 405);
+            this.button1.Location = new System.Drawing.Point(124, 386);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 34);
             this.button1.TabIndex = 11;
@@ -242,9 +242,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtSalario;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtExpire;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox txtDesc;

@@ -80,5 +80,43 @@ namespace Presentation
             }
 
         }
+
+
+        private void TxtExpire_KeyDown(object sender, KeyEventArgs e)
+        {
+            int cd, i;
+
+            if (Keys.Enter == e.KeyCode)
+            {
+        
+                if (!int.TryParse(txtExpire.Text, out cd))
+                {
+                    MessageBox.Show("Error, no puede ser letras");
+                }
+                else
+                {
+                    if (cd < 0)
+                    {
+                        MessageBox.Show("No puede ser menor que cero");
+                        return;
+                    }
+                    cd = int.Parse(txtExpire.Text);
+
+                    if (i > 5)
+                    {
+                        MessageBox.Show("Solo se puede meter 6 notas");
+                        return;
+
+                    }
+                    cd[i] = cd;
+
+                    i++;
+
+                    label5.Text = $"Fecha: {i}";
+
+                    txtExpire = string.Empty;
+                }
+            }
+        }
     }
 }
